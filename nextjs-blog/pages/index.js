@@ -47,6 +47,20 @@ export default function Home() {
             </p>
           </a>
         </div>
+        <div>
+          <h3 className='title'>
+            Read {' '}
+            <Link href='/home'>
+              <a>my homepage</a>
+            </Link>
+          </h3>
+          <h3 className='title'>
+            Read {' '}
+            <Link href='posts/first-post'>
+              <a>this page</a>
+            </Link>
+          </h3>
+        </div>
       </main>
 
       <footer>
