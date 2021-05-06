@@ -13,7 +13,7 @@ export async function getStaticProps() {
   }
 }
 
-export default function Home() {
+export default function Home({ allPostsData }) {
   return (
     <Layout home>
       <Head>
@@ -22,6 +22,20 @@ export default function Home() {
       <section className={utilStyles.headingMd}>
         <p>[Hey people, I'm an enthusiastic web developper, always in search for some challenge, because there's no better way to learn...]</p>
         <p>visit <a href="https://nextjs.org/learn">this link</a> to learn !</p>
+      </section>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <ul className={utilStyles.list}>
+          {allPostsData.map(({ id, date, title }) => (
+            <li className={utilStyles.listItem} key={id}>
+              {title}
+              <br />
+              {id}
+              <br />
+              {date}
+            </li>
+          ))}
+        </ul>
       </section>
     </Layout>
   )
