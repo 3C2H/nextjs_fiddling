@@ -26,3 +26,16 @@ export function getSortedPostsData() {
     }
   })
 }
+
+export function getAllPostIds() {
+  const fileNames = fs.readdirSync(postsDirectory)
+
+  // Returns an array of objects with param key containing an obj with id key
+  return fileNames.map(fileName => {
+    return {
+      params: {
+        id: fileName.replace(/\.md$/, '')
+      }
+    }
+  })
+}
